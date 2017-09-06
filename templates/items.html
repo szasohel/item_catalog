@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>catagory</title>
+</head>
+<body>
+<h2>Items in {{catagory.name}}</h2>
+<h4><a href="{{url_for('new_item', catagory_id = catagory.id)}}">Create New item</a></h4>
+<ul>
+	{% for i in items %}
+
+	<li>{{i.name}}</li>
+	<a href="{{url_for('edit_item', catagory_id = catagory.id, item_id = i.id)}}">Edit</a>
+	<a href="{{url_for('delete_item', catagory_id = catagory.id, item_id = i.id)}}">Delete</a>
+	<br>
+	<br>
+
+	{%endfor%}
+</ul>
+
+
+
+</body>
+</html>
